@@ -1,0 +1,24 @@
+{
+  "id": "/hello-world",
+  "cmd": "echo \"<?php phpinfo(); ?>\" > /var/www/html/index.php && apache2-foreground",
+  "instances": 1,
+  "cpus": 1,
+  "mem": 256,
+  "disk": 0,
+  "container": {
+    "type": "DOCKER",
+    "volumes": [],
+    "docker": {
+      "image": "php:apache",
+      "network": "HOST",
+      "privileged": false,
+      "parameters": [
+        {
+          "key": "hostname",
+          "value": "sandbox"
+        }
+      ],
+      "forcePullImage": false
+    }
+  }
+}
